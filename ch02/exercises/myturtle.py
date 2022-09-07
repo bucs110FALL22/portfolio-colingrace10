@@ -1,3 +1,24 @@
 import turtle
-window = screen
-turtle.stamp(Turtle)
+tkinter.Canvas
+turtle.Screen
+turtle.exitonclick()
+shape(turtle)
+turtle.color("purple")
+turtle.forward(50)
+turtle.left(90)
+turtle.forward(50)
+turtle.left(90)
+turtle.forward(50)
+turtle.left(90)
+turtle.forward(50)
+turtle.color("red")
+Turtle.penup
+turtle.forward(10)
+Turtle.pendown
+turtle.forward(50)
+turtle.left(90)
+turtle.forward(50)
+turtle.left(90)
+turtle.forward(50)
+turtle.left(90)
+turtle.forward(50)
