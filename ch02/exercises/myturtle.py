@@ -12,9 +12,9 @@ turtle.forward(50)
 turtle.left(90)
 turtle.forward(50)
 turtle.color("red")
-Turtle.penup
+turtle.penup
 turtle.forward(10)
-Turtle.pendown
+turtle.pendown
 turtle.forward(50)
 turtle.left(90)
 turtle.forward(50)
