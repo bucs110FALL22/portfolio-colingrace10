@@ -1,8 +1,7 @@
 import turtle
-tkinter.Canvas
-turtle.Screen
-turtle.exitonclick()
-shape(turtle)
+
+
+turtle.shape(turtle)
 turtle.color("purple")
 turtle.forward(50)
 turtle.left(90)
@@ -22,3 +21,5 @@ turtle.left(90)
 turtle.forward(50)
 turtle.left(90)
 turtle.forward(50)
+turtle.exitonclick()
+print(turtle)
