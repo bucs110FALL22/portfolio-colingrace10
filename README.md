@@ -14,4 +14,4 @@ Preferred Name: Colin
 
 Discord username: colingrace10
 
-REPL url: https://replit.com/@colingrace10/YoungTurbulentPatches#my%20folder/my%20program
+REPL url: [https://replit.com/@colingrace10/YoungTurbulentPatches#my%20folder/my%20program](https://replit.com/join/dnbfxqrlmn-colingrace10)
