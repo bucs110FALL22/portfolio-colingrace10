@@ -44,17 +44,17 @@ turtle.delay(500)
 # PART B - complete part B here
 
 pygame.init()
-size = width, height = 1000, 700
-window = pygame.display.set_mode(size)
+window = pygame.display.set_mode()
+
 
 
 blue = [0,0,255]
-white = [0,0,0]
+white = [255,255,255]
 window.fill(white)
 
 coords = []
 num_sides = 3
-side_length = 1
+side_length = 75
 offset = (100)
 
 
@@ -62,12 +62,65 @@ for i in range(num_sides):
  theta = (2.0 * math.pi * (i)) / num_sides
  x = side_length * math.cos(theta) + offset
  y = side_length * math.sin(theta) + offset
- coords.insert= (x,y)
-pygame.draw.polygon(window,blue,[(coords)])
-print(i)
+ coords.append([x,y])
+pygame.draw.polygon(window, blue, coords)
+
+pygame.display.flip()
+
+pygame.time.wait(500)
 
 
-#num_sides = 4
-#for i in range(numsides)
+num_sides = 4
 
-window.exitonclick()
+for i in range(num_sides):
+ theta = (2.0 * math.pi * (i)) / num_sides
+ x = side_length * math.cos(theta) + offset
+ y = side_length * math.sin(theta) + offset
+ coords.append([x,y])
+pygame.draw.polygon(window, blue, coords)
+pygame.display.flip()
+pygame.time.wait(500)
+
+window.fill(white)
+
+num_sides = 5
+
+for i in range(num_sides):
+ theta = (2.0 * math.pi * (i)) / num_sides
+ x = side_length * math.cos(theta) + offset
+ y = side_length * math.sin(theta) + offset
+ coords.append([x,y])
+pygame.draw.polygon(window, blue, coords)
+pygame.display.flip()
+pygame.time.wait(500)
+num_sides = 9
+
+coords.clear()
+
+for i in range(num_sides):
+ theta = (2.0 * math.pi * (i)) / num_sides
+ x = side_length * math.cos(theta) + offset
+ y = side_length * math.sin(theta) + offset
+ coords.append([x,y])
+pygame.draw.polygon(window, blue, coords)
+pygame.display.flip()
+pygame.time.wait(500)
+
+window.fill(white)
+
+num_sides = 360
+
+for i in range(num_sides):
+ theta = (2.0 * math.pi * (i)) / num_sides
+ x = side_length * math.cos(theta) + offset
+ y = side_length * math.sin(theta) + offset
+ coords.append([x,y])
+pygame.draw.polygon(window, blue, coords)
+pygame.display.flip()
+pygame.time.wait(500)
+
+coords.clear()
+
+
+
+#window.exitonclick()
