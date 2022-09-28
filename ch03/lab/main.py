@@ -22,6 +22,9 @@ leonardo.goto(-100,-20)
 ## 5. Your PART A code goes here
 
 #race 1
+
+turtle.speed(10)
+turtle.delay(500)
 leonardo.forward(random.randrange(1,101))
 michelangelo.forward(random.randrange(1,101))
 
@@ -63,11 +66,13 @@ for i in range(num_sides):
  x = side_length * math.cos(theta) + offset
  y = side_length * math.sin(theta) + offset
  coords.append([x,y])
+window.fill(white)
 pygame.draw.polygon(window, blue, coords)
 
 pygame.display.flip()
 
 pygame.time.wait(500)
+coords.clear()
 
 
 num_sides = 4
@@ -77,11 +82,12 @@ for i in range(num_sides):
  x = side_length * math.cos(theta) + offset
  y = side_length * math.sin(theta) + offset
  coords.append([x,y])
+window.fill(white)
 pygame.draw.polygon(window, blue, coords)
 pygame.display.flip()
 pygame.time.wait(500)
+coords.clear()
 
-window.fill(white)
 
 num_sides = 5
 
@@ -90,23 +96,26 @@ for i in range(num_sides):
  x = side_length * math.cos(theta) + offset
  y = side_length * math.sin(theta) + offset
  coords.append([x,y])
+window.fill(white)
 pygame.draw.polygon(window, blue, coords)
 pygame.display.flip()
 pygame.time.wait(500)
+coords.clear()
 num_sides = 9
 
-coords.clear()
+
 
 for i in range(num_sides):
  theta = (2.0 * math.pi * (i)) / num_sides
  x = side_length * math.cos(theta) + offset
  y = side_length * math.sin(theta) + offset
  coords.append([x,y])
+window.fill(white)
 pygame.draw.polygon(window, blue, coords)
 pygame.display.flip()
 pygame.time.wait(500)
+coords.clear()
 
-window.fill(white)
 
 num_sides = 360
 
@@ -115,12 +124,10 @@ for i in range(num_sides):
  x = side_length * math.cos(theta) + offset
  y = side_length * math.sin(theta) + offset
  coords.append([x,y])
+window.fill(white)
 pygame.draw.polygon(window, blue, coords)
 pygame.display.flip()
 pygame.time.wait(500)
-
 coords.clear()
-
-
 
 #window.exitonclick()
