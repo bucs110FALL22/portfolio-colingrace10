@@ -130,4 +130,4 @@ pygame.display.flip()
 pygame.time.wait(500)
 coords.clear()
 
-#window.exitonclick()
+window.exitonclick()
