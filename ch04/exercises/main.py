@@ -2,9 +2,10 @@ football = ("Despite being one of the best running backs to come out of college 
 
 
 dict = {
-  "nfl" : "No Fun League", 
-  "football" : "Pig skin", 
-  "league" : "world"}
+  "NFL": "No Fun League",
+  "football": "Pig skin", 
+  "league": "world",
+  "wrecking ball": "absolute freight train"}
 
 for key, value in dict.items():
   article = football.replace(key, value)
