@@ -36,9 +36,7 @@ turtle.delay(500)
 n = 10
 i = random.randrange(1,11)
 for _ in range(n):
-  leonardo.forward(i)
-for _ in range(n):
- michelangelo.forward(i)
+  leonardo.forward(i),michelangelo.forward(i)
 
 michelangelo.goto(-100,20)
 leonardo.goto(-100,-20)
@@ -130,4 +128,4 @@ pygame.display.flip()
 pygame.time.wait(500)
 coords.clear()
 
-window.exitonclick()
+#window.exitonclick()
