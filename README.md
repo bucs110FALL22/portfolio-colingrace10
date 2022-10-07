@@ -1,7 +1,6 @@
 # portfolio-colingrace10
-portfolio-colingrace10 created by GitHub Classroom
 
-Prefered name: Colin Grace
+Preferred name: Colin Grace
 
 Discord name: colingrace10
 
