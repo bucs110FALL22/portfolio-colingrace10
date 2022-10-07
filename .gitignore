@@ -1,0 +1,6 @@
+venv/
+*replit*
+*.lock
+*.toml
+*.nix
+*.pyc
