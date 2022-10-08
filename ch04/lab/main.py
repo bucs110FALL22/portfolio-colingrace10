@@ -63,21 +63,18 @@ surface.fill("green1")
 pygame.display.update()
 
 
-#pygame.draw.rect(surface, red, (60,60,130,130))
-#pygame.display.flip()
-
-#pygame.draw.rect(surface, blue1, (200,60,130,130))
-#pygame.display.flip()
-
-#player1 = ("Select a color using your mouse:")
-
-
 pygame.display.update()
 
 surface.fill(green1)
 pygame.draw.circle(surface, white, (width/2, height/2), (width/2))
 pygame.draw.line(surface, black, (width/2, 0),(width/2, height))
 pygame.draw.line(surface, black, (0, height/2),(width, height/2))
+
+red_score = 0
+blue_score = 0
+
+print("Red score", red_score)
+print("Blue score", blue_score)
 
 for i in range(10):
  x = random.randrange(0, width)
@@ -88,10 +85,15 @@ for i in range(10):
 
  if is_in_circle: 
    pygame.draw.circle(surface, red, (x, y), (5))
+   red_score = red_score + 1 
+   print("Red player hit!")
+   print("Red score:", red_score)
    pygame.display.flip()
    time.sleep(2)
  else:
    pygame.draw.circle(surface, black, (x, y), (5))
+   print("Red player miss")
+   print("Red score:", red_score)
    pygame.display.flip()
    time.sleep(2)
  if is_in_circle: 
@@ -101,14 +103,26 @@ for i in range(10):
    distance_from_center = math.hypot(x-height/2, y-width/2)
    is_in_circle = distance_from_center <= width/2
 
-   pygame.draw.circle(surface, blue, (x, y), (5))
+   pygame.draw.circle(surface, blue1, (x, y), (5))
+   blue_score = blue_score + 1 
+   print("Blue player hit!")
+   print("Blue score", blue_score)
    pygame.display.flip()
    time.sleep(2)
  else:
    pygame.draw.circle(surface, yellow, (x, y), (5))
+   print("Blue player miss")
+   print("Blue score", blue_score)
    pygame.display.flip()
    time.sleep(2)
 
+ if red_score > blue_score:
+     print("Red Player Wins!!!")
+   elif blue_score > red_score:
+     print("Blue Player Wins!!!")
+   else:
+     print("Its a tie!!")
+
+  
 pygame.display.update()
 pygame.time.wait(1000)
-
