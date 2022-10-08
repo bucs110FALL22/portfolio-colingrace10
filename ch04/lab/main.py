@@ -1,45 +1,44 @@
 import pygame
 import math
 import random
+import time
 
 # Colors
 pink = (236,117,117)
 blue = (46,135,238)
 black =(0,0,0)
 green= (99,250,11)
-white = (0,0,0)
+white = (255,255,255)
 red = (255,0,0)
 blue1 = (0,0,255)
-
+green1 = (43,152,15)
+yellow = (247,255,0)
+  
 #screen setup part A
 
 pygame.init()
-surface = pygame.display.set_mode()
+surface = pygame.display.set_mode((300, 300))
 
 width = pygame.display.get_window_size()[0]
 height = pygame.display.get_window_size()[1]
 
-print(width)
-print(height)
 surface = pygame.display.set_mode((width, height))
 surface.fill(blue)
-pygame.draw.circle(surface, pink, (293, 130), (125))
-pygame.draw.line(surface, black, (0, 130),(6000, 130) )
-pygame.draw.line(surface, black, (293, 0),(293, 1000) )
-pygame.display.update()
+pygame.draw.circle(surface, pink, (width/2, height/2), (width/2))
+pygame.draw.line(surface, black, (width/2, 0),(width/2, height))
+pygame.draw.line(surface, black, (0, height/2),(width, height/2))
+
 
 #part B
 
 
-x = random.randrange(0, width)
-y = random.randrange(0, height)
+for i in range(10):
+ x = random.randrange(0, width)
+ y = random.randrange(0, height)
  
-distance_from_center = math.hypot(x-293, y-130)
-is_in_circle = distance_from_center <= 293/2
+ distance_from_center = math.hypot(x-height/2, y-width/2)
+ is_in_circle = distance_from_center <= width/2
 
-throws = 0
-while throws <= 10:
- throws = throws + 1
  if is_in_circle: 
    pygame.draw.circle(surface, green, (x, y), (5))
    pygame.display.flip()
@@ -48,7 +47,7 @@ while throws <= 10:
    pygame.display.flip()
   
 
-print(throws)
+
 pygame.time.wait(1000)
 
 pygame.display.flip()
@@ -59,16 +58,57 @@ surface.fill("blue")
 
 #Part C
 
-surface.fill("white")
+surface.fill("green1")
 
 pygame.display.update()
 
 
-pygame.draw.rect(surface, red, (60,60,130,130))
-pygame.display.flip()
+#pygame.draw.rect(surface, red, (60,60,130,130))
+#pygame.display.flip()
 
-pygame.draw.rect(surface, blue1, (200,60,130,130))
-pygame.display.flip()
+#pygame.draw.rect(surface, blue1, (200,60,130,130))
+#pygame.display.flip()
 
-player1 = ("Select a color using your mouse:")
+#player1 = ("Select a color using your mouse:")
+
+
+pygame.display.update()
+
+surface.fill(green1)
+pygame.draw.circle(surface, white, (width/2, height/2), (width/2))
+pygame.draw.line(surface, black, (width/2, 0),(width/2, height))
+pygame.draw.line(surface, black, (0, height/2),(width, height/2))
+
+for i in range(10):
+ x = random.randrange(0, width)
+ y = random.randrange(0, height)
+ 
+ distance_from_center = math.hypot(x-height/2, y-width/2)
+ is_in_circle = distance_from_center <= width/2
+
+ if is_in_circle: 
+   pygame.draw.circle(surface, red, (x, y), (5))
+   pygame.display.flip()
+   time.sleep(2)
+ else:
+   pygame.draw.circle(surface, black, (x, y), (5))
+   pygame.display.flip()
+   time.sleep(2)
+ if is_in_circle: 
+   x = random.randrange(0, width)
+   y = random.randrange(0, height)
+ 
+   distance_from_center = math.hypot(x-height/2, y-width/2)
+   is_in_circle = distance_from_center <= width/2
+
+   pygame.draw.circle(surface, blue, (x, y), (5))
+   pygame.display.flip()
+   time.sleep(2)
+ else:
+   pygame.draw.circle(surface, yellow, (x, y), (5))
+   pygame.display.flip()
+   time.sleep(2)
+
+pygame.display.update()
+pygame.time.wait(1000)
 
