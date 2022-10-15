@@ -1,21 +1,33 @@
+import pygame
 
-#n= list(range(0, 101))
-even = list(range(2,101 , 2))
-#odd = list(range(1,101 , 2))
-n = range(1,101)
+iters = {}
+n = 20
+upper_limit = 10 
+max_so_far = 0
+num_so_far = 
+display = pygame.display.set_mode()
+pygame.font.init()
+
+def func(n):
+ count = 0
+ while n != 1:
+   if n % 2 == 0:
+     n = n / 2    
+     count = count + 1
+   else:
+     n = 3*n+1
+     count = count + 1   
+ return(count)
 
 
-#part A
+for i in range(2, upper_limit + 1):
+ iters[i] = func(i)
 
-n = 101
+print(iters)
 
-while n < 101:
- if n % 2 == 0:
-  n = n / 2
-  print(n)
- elif n == 1:
-   break
- else:
-  n = 3*n+1
-  print(n)
-#part B 24
+pygame.draw.lines(display, color, False, coordinates)
+new_display = pygame.transform.flip(display, False, True)
+display.blit( new_display , (0, 0) )
+font = pygame.font.Font(None, 40)
+msg = font.render("what you want your max to be", True, 'blue')
+display.blit(rendered_message, pos)
