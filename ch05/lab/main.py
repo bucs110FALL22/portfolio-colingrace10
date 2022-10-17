@@ -4,7 +4,7 @@ iters = {}
 n = 20
 upper_limit = 10 
 max_so_far = 0
-num_so_far = 
+num_so_far = 0
 display = pygame.display.set_mode()
 pygame.font.init()
 
@@ -23,9 +23,9 @@ def func(n):
 for i in range(2, upper_limit + 1):
  iters[i] = func(i)
 
-print(iters)
+print(iters.items)
 
-pygame.draw.lines(display, color, False, coordinates)
+pygame.draw.lines(display, 'blue', False, iters)
 new_display = pygame.transform.flip(display, False, True)
 display.blit( new_display , (0, 0) )
 font = pygame.font.Font(None, 40)
