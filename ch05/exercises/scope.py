@@ -11,10 +11,10 @@ def square(num):
     result = result + num
   return result
 
-def exp(num):
+def exp(num, var):
   result = 1
   for i in range(var):
-    result = result + num
+    result = result * num
   return result
 
 def main():
