@@ -1,12 +1,13 @@
 import pygame
 
+
+
 iters = {}
 n = 20
 upper_limit = 10 
 max_so_far = 0
 num_so_far = 0
-display = pygame.display.set_mode()
-pygame.font.init()
+
 
 def func(n):
  count = 0
@@ -23,11 +24,46 @@ def func(n):
 for i in range(2, upper_limit + 1):
  iters[i] = func(i)
 
-print(iters.items)
+print(iters)
 
-pygame.draw.lines(display, 'blue', False, iters)
-new_display = pygame.transform.flip(display, False, True)
-display.blit( new_display , (0, 0) )
-font = pygame.font.Font(None, 40)
-msg = font.render("what you want your max to be", True, 'blue')
-display.blit(rendered_message, pos)
+
+max_value = 0
+max_value_so_far = 0
+black = [255, 255, 255]
+red = [255, 0, 0]
+green = [0, 255, 0]
+yellow = [255, 255, 0]
+scale = 20
+display = pygame.display.set_mode()
+
+
+pygame.font.init()
+iters2 = []
+
+for j in range(2, upper_limit + 1):
+ iters2 +=[(j*scale, func(j)*scale)] 
+ 
+  #trying to figure out how to turn iters into ordered pair
+ if max_value_so_far < func(j):
+   max_value = j
+   max_value_so_far = func(j)
+
+ new_display = pygame.Surface(display.get_size())
+ if len(iters2) >= 2:
+   pygame.draw.lines(new_display, green, False, iters2)
+ new_display = pygame.transform.flip(new_display, False, 
+  True)
+ display.blit(new_display, (0, 0))
+ pygame.display.update()
+ font = pygame.font.Font(None, 25)
+ msg = font.render("Iters graph", False, yellow)
+ display.blit(msg, (0, 0))
+ pygame.display.update()
+ pygame.time.wait(1200)
+
+running = True
+while running:
+  for event in pygame.event.get():
+    if event.type == pygame.QUIT:
+      pygame.quit()
+      running = False
