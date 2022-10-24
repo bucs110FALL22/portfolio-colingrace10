@@ -56,7 +56,7 @@ for j in range(2, upper_limit + 1):
  display.blit(new_display, (0, 0))
  pygame.display.update()
  font = pygame.font.Font(None, 25)
- msg = font.render("Iters graph", False, yellow)
+ msg = font.render(("Max so far:"(max_so_far), False, yellow))
  display.blit(msg, (0, 0))
  pygame.display.update()
  pygame.time.wait(1200)
