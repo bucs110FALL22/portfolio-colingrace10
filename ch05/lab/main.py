@@ -1,10 +1,7 @@
 import pygame
-
-
-
 iters = {}
 n = 20
-upper_limit = 10 
+upper_limit = 100
 max_so_far = 0
 num_so_far = 0
 
@@ -41,25 +38,24 @@ pygame.font.init()
 iters2 = []
 
 for j in range(2, upper_limit + 1):
- iters2 +=[(j*scale, func(j)*scale)] 
+  iters2 +=[(j*scale, func(j)*scale)]
+  if max_value_so_far < func(j):
+    max_value = j
+    max_value_so_far = func(j)
  
-  #trying to figure out how to turn iters into ordered pair
- if max_value_so_far < func(j):
-   max_value = j
-   max_value_so_far = func(j)
+print(max_value_so_far) 
 
- new_display = pygame.Surface(display.get_size())
- if len(iters2) >= 2:
-   pygame.draw.lines(new_display, green, False, iters2)
- new_display = pygame.transform.flip(new_display, False, 
-  True)
- display.blit(new_display, (0, 0))
- pygame.display.update()
- font = pygame.font.Font(None, 25)
- msg = font.render(("Max so far:"(max_so_far), False, yellow))
- display.blit(msg, (0, 0))
- pygame.display.update()
- pygame.time.wait(1200)
+new_display = pygame.Surface(display.get_size())
+if len(iters2) >= 2:
+  pygame.draw.lines(new_display, green, False, iters2)
+new_display = pygame.transform.flip(new_display, False, True)
+display.blit(new_display, (0, 0))
+pygame.display.update()
+font = pygame.font.Font(None, 25)
+msg = font.render("Max so far:"+str(max_value_so_far), True, yellow)
+display.blit(msg, (0, 0))
+pygame.display.update()
+pygame.time.wait(1200)
 
 running = True
 while running:
