@@ -1,5 +1,5 @@
 language = "python3"
-entrypoint = "ch01/exercises/.blank"
+entrypoint = "ch01/exercises/main.py"
 hidden = ["venv", ".config", "**/__pycache__", "**/.mypy_cache", "**/*.pyc"]
 
 audio = true
