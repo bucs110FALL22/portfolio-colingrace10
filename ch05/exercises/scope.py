@@ -1,9 +1,11 @@
+
+
 def multi(num,var):
   result = 0
   for j in range(num):
    result = result + var 
   return result
-
+  
 
 def square(num):
   result = 0
