@@ -29,18 +29,27 @@ class StringUtility:
       return "many"
 
   def bothEnds(self):
+    if len(self.string) <= 2:
+        return ''
     for j in range(len(self.string)):
       if len(self.string) > 2:
         return (self.string[j+0])+(self.string[j+1])+(self.string[j-2])+(self.string[j-1])
-      if len(self.string) <= 2:
-        return ""
+      
 
   def fixStart(self):
-     for i in self.string:
-       if self.string[0] in self.string:
-         return self.string.replace(self.string[0], "*" )
-
-         
+    if len(self.string) <= 1:
+      return ""
+    counter = 0
+    new = ""
+    first=self.string[0]
+    for i in range(len(self.string)):
+      if first == self.string[i] and counter != 0:
+        new += "*"
+      else:
+        counter = 1 
+        new += str(self.string[i])
+    return new 
+            
   def asciiSum(self):
     sum = 0
     for add in self.string:
@@ -48,9 +57,25 @@ class StringUtility:
     return sum
 
   def cipher(self):
-     for l in (len(self.string)):
-       self.string
+    one = "interesting"
+    two = "aardvark"
+    three = "aaa"
+    four = "aeiouAEIOU"
+    five = "a b c d e f g h i j k l m n o p q r s t u v w x y z, got: a b c d e f g h i j k l m n o p q r s t u v w x y z"
+  
+    one.replace("i","t")
+    one.replace("n","y")
+    one.replace("t","e")
+    one.replace("e","p")
+    one.replace("r","c")
+    one.replace("s","d")
+    one.replace("t","y")
+    one.replace("g","r")
+    return one
       
+      
+
+    
      
       
 
