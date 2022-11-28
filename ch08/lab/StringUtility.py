@@ -57,22 +57,20 @@ class StringUtility:
     return sum
 
   def cipher(self):
-    one = "interesting"
-    two = "aardvark"
-    three = "aaa"
-    four = "aeiouAEIOU"
-    five = "a b c d e f g h i j k l m n o p q r s t u v w x y z, got: a b c d e f g h i j k l m n o p q r s t u v w x y z"
-  
-    one.replace("i","t")
-    one.replace("n","y")
-    one.replace("t","e")
-    one.replace("e","p")
-    one.replace("r","c")
-    one.replace("s","d")
-    one.replace("t","y")
-    one.replace("g","r")
-    return one
-      
+    def cipher(self):
+        upper = 65
+        lower = 97
+        alpha = 26
+        list = ""
+        for j in self.s:
+            if j == "":
+                list = list+j
+            elif j.isupper():
+                list = list+chr((ord(j)+len(self.s)-upper)%alpha+upper)
+            else:
+                list = list+chr((ord(j)+len(self.s)-lower)%alpha+lower)
+        return list
+
       
 
     
