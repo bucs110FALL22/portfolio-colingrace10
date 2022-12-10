@@ -99,11 +99,11 @@ for i in range(10):
    pygame.display.flip()
    time.sleep(2)
 
- if red_score > blue_score:
+if red_score > blue_score:
      print("Red Player Wins!!!")
- elif blue_score > red_score:
+elif blue_score > red_score:
      print("Blue Player Wins!!!")
- else:
+else:
      print("Its a tie!!")
 
 
